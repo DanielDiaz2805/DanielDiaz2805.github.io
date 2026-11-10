@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --header-h: 4.5rem;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-abismo text-hielo font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    /* Resplandor superior muy tenue: da profundidad sin "lavar" el fondo */
+    background-image:
+      radial-gradient(60rem 30rem at 85% -10%, rgba(141, 123, 255, 0.12), transparent 60%),
+      radial-gradient(40rem 24rem at 0% 10%, rgba(59, 227, 245, 0.06), transparent 60%);
+    background-repeat: no-repeat;
+  }
+  ::selection { background: rgba(59, 227, 245, 0.3); color: #fff; }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.cian");
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  h1, h2, h3 { @apply font-display; font-feature-settings: "ss01"; }
+}
+
+@layer components {
+  .contenedor { @apply mx-auto w-full max-w-contenido px-5 sm:px-8; }
+  .seccion { @apply py-24 sm:py-32; }
+
+  .titulo-seccion {
+    @apply font-display font-medium text-hielo;
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  /* Botones: uno primario con luz propia, los demás silenciosos */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[0.95rem] font-semibold
+      transition-[background-color,border-color,color,box-shadow,transform] duration-200
+      active:translate-y-px;
+  }
+  .btn-primario {
+    @apply btn bg-cian text-abismo hover:bg-white;
+    box-shadow: 0 0 0 1px rgba(59, 227, 245, 0.4), 0 10px 40px -10px rgba(59, 227, 245, 0.6);
+  }
+  .btn-secundario {
+    @apply btn border border-trazo text-hielo hover:border-cian/60 hover:bg-white/[0.03];
+  }
+
+  .enlace {
+    @apply text-hielo underline decoration-trazo underline-offset-4 transition-colors hover:decoration-cian;
+  }
+
+  .campo {
+    @apply w-full rounded-xl border border-trazo bg-pizarra/70 px-4 py-3 text-hielo placeholder:text-niebla/60
+      transition-colors focus:border-cian focus:outline-none;
+  }
+  .campo[aria-invalid="true"] { @apply border-rose-400/60; }
+}
+
+/* ---------- Animación de entrada del hero (único momento orquestado) ---------- */
+@keyframes subir {
+  from { transform: translateY(105%); }
+  to   { transform: translateY(0); }
+}
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes fundido { from { opacity: 0; } to { opacity: 1; } }
+
+.linea-mascara { display: block; overflow: hidden; padding-bottom: 0.08em; }
+.linea-mascara > span {
+  display: block;
+  animation: subir 1s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.entrada { animation: aparecer 0.8s cubic-bezier(0.19, 1, 0.22, 1) both; }
+.entrada-lienzo { animation: fundido 2s ease-out 0.3s both; }
+
+@keyframes pulso {
+  0%   { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+.punto-disponible { animation: pulso 2.4s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
