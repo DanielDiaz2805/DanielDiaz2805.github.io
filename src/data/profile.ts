@@ -39,7 +39,7 @@ export const perfil = {
   nombre: "Daniel",
   apellido: "Diaz Montiel",
   iniciales: "DD",
-  titulo: "Desarrollador full stack, finalizando Ingeniería de Sistemas",
+  titulo: "Ingeniero de Sistemas y desarrollador full stack",
   ubicacion: "Chinú, Córdoba, Colombia",
   zonaHoraria: "UTC−5",
 
@@ -73,9 +73,9 @@ export const perfil = {
 export const sobreMi = {
   provisional: false,
   parrafos: [
-    "Estoy terminando el décimo semestre de Ingeniería de Sistemas en la Corporación Universitaria del Caribe (CECAR) y realicé mis prácticas profesionales en la Alcaldía de Chinú. Trabajo en todo el recorrido de una aplicación: maqueto la interfaz, construyo el back-end y diseño las APIs RESTful que conectan ambos, tanto en web como en móvil.",
-    "Me gusta convertir un requerimiento difuso en un sistema con partes claras. En PMIC, por ejemplo, el procesamiento de imágenes se dividió en cuatro etapas independientes conectadas por colas, cada una con sus propios workers y métricas, para saber exactamente dónde se gasta el tiempo y qué falló. Aplico ese mismo criterio de separación de responsabilidades, siguiendo MVC, en cada proyecto.",
-    "Mis proyectos más recientes giran en torno a la integración de sistemas: microservicios, un middleware con autenticación JWT y orquestadores que combinan varios servicios sin romperse cuando uno no responde. Busco sumarme a un equipo donde pueda aportar en desarrollo full stack e integración, y seguir creciendo junto a desarrolladores con más experiencia.",
+    "Soy desarrollador de software y me apasiona convertir ideas y necesidades reales en soluciones tecnológicas. Me especializo en construir aplicaciones web y móviles, participando en todo el proceso de desarrollo: desde el diseño de interfaces y la lógica de negocio hasta la implementación del back-end, las APIs RESTful y la integración de bases de datos.",
+    "Me gusta entender los problemas antes de escribir código, analizar diferentes alternativas y encontrar soluciones que sean funcionales, eficientes y fáciles de mantener. Disfruto trabajar con nuevas tecnologías, explorar diferentes enfoques y enfrentar desafíos que me permitan ampliar mis conocimientos y fortalecer mis habilidades.",
+    "Creo que desarrollar software va más allá de hacer que algo funcione: se trata de construir soluciones bien pensadas, cuidar los detalles y generar valor para quienes las utilizan.",
   ],
   datos: [
     { valor: "Web y móvil", etiqueta: "full stack con Next.js y Node.js, y apps con Flutter" },
@@ -170,7 +170,7 @@ export const trayectoria: { provisional: boolean; items: Hito[] } = {
       entidad: "Corporación Universitaria del Caribe (CECAR), Sincelejo, Sucre",
       periodo: "2021 — 2026",
       descripcion:
-        "Cursando el décimo y último semestre. Formación en desarrollo de software front-end y back-end, aplicaciones web y móviles, arquitectura MVC, integración de sistemas y metodologías ágiles.",
+        "Formación en desarrollo de software front-end y back-end, aplicaciones web y móviles, arquitectura MVC, integración de sistemas y metodologías ágiles.",
     },
     {
       tipo: "certificacion",
@@ -213,7 +213,7 @@ export const servicios = {
 
 export const seo = {
   descripcion:
-    "Daniel Diaz Montiel, desarrollador full stack y estudiante de último semestre de Ingeniería de Sistemas en Colombia. Aplicaciones web y móviles, APIs RESTful e integración de sistemas.",
+    "Daniel Diaz Montiel, Ingeniero de Sistemas y desarrollador full stack en Colombia. Aplicaciones web y móviles, APIs RESTful e integración de sistemas.",
   palabrasClave: [
     "Daniel Diaz Montiel",
     "Ingeniero de Sistemas",
