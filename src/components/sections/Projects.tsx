@@ -18,7 +18,7 @@ export function Projects() {
         <div className="grid gap-6">
           {principal && <ProjectCard p={principal} destacado />}
           {resto.length > 0 && (
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-6 lg:grid-cols-3">
               {resto.map((p) => <ProjectCard key={p.titulo + p.resumen} p={p} />)}
             </div>
           )}
