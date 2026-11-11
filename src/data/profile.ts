@@ -123,7 +123,7 @@ export const proyectos: { provisional: boolean; items: Proyecto[] } = {
       ],
       tecnologias: ["Next.js 15", "React 19", "TypeScript", "MongoDB", "Mongoose", "Zod", "JWT", "Cloudinary", "Tailwind CSS", "Vercel"],
       // Cuando guardes la captura en public/proyectos/hotel-reservas.png, quita las barras de la siguiente línea
-      // imagen: "/proyectos/hotel-reservas.png",
+      imagen: "/hotel-reservas.png",
       repo: "https://github.com/DanielDiaz2805/hotel-reservas",
       demo: "https://hotel-reservas-dun.vercel.app",
     },
