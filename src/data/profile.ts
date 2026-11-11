@@ -65,7 +65,7 @@ export const perfil = {
 
   githubUsuario: "DanielDiaz2805",
   // Repositorios que aparecen primero en la sección GitHub, en este orden.
-  githubFijados: ["PMIC", "middleware-hospitalario", "practica_integraci-n"],
+  githubFijados: ["hotel-reservas", "PMIC", "middleware-hospitalario", "practica_integraci-n"],
   // Repositorios que nunca se muestran en el portafolio.
   githubOcultar: ["vida", "gesti-n", "parcial-asesor-academico"],
 };
@@ -88,14 +88,14 @@ export const sobreMi = {
 export const stack = {
   provisional: false,
   categorias: [
-    { nombre: "Lenguajes", items: ["JavaScript (ES6+)", "Python", "HTML5", "CSS3"] },
+    { nombre: "Lenguajes", items: ["TypeScript", "JavaScript (ES6+)", "Python", "HTML5", "CSS3"] },
     { nombre: "Frontend", items: ["React", "Next.js", "Bootstrap", "Tailwind CSS"] },
     { nombre: "Backend y APIs", items: ["Node.js", "Flask", "FastAPI", "APIs RESTful", "Autenticación JWT"] },
     { nombre: "Móvil", items: ["Flutter"] },
     { nombre: "Bases de datos", items: ["MongoDB", "Firebase", "SQLite"] },
     {
       nombre: "Herramientas y prácticas",
-      items: ["Git y GitHub", "Excel", "Arquitectura MVC", "Microservicios", "Scrum y Kanban", "Depuración y documentación"],
+      items: ["Git y GitHub", "Vercel", "Cloudinary", "Excel", "Arquitectura MVC", "Microservicios", "Scrum y Kanban", "Depuración y documentación"],
     },
   ],
 };
@@ -105,6 +105,29 @@ export const proyectos: { provisional: boolean; items: Proyecto[] } = {
   items: [
     {
       destacado: true,
+      titulo: "Sistema de reservas y administración para hoteles",
+      resumen:
+        "Proyecto en producción. Aplicación web completa para hoteles pequeños: el huésped reserva con disponibilidad real y el hotel lo administra todo desde un panel propio.",
+      problema:
+        "Muchos hoteles pequeños reciben las reservas por WhatsApp y las anotan en un cuaderno o en Excel: hay reservas dobles cuando dos personas piden la misma habitación, mensajes que se pierden y horas de ida y vuelta para confirmar.",
+      solucion:
+        "Cada noche reservada es un documento con un índice único sobre (habitación, fecha), así que MongoDB rechaza una reserva doble aunque dos personas reserven al mismo tiempo. WhatsApp sigue siendo el canal de confirmación, pero ordenado, con los datos ya escritos, y todo el sitio se edita desde un panel.",
+      funcionalidades: [
+        "Buscador de disponibilidad por fechas con el total de la estadía, calculado en el servidor",
+        "Panel del hotel: reservas con búsqueda y filtros, historial de cambios, notas internas, check-in y check-out",
+        "Reservas manuales y modificación de fechas o habitación sin dejar huecos ni reservas dobles",
+        "Calendario de ocupación con bloqueo de fechas por mantenimiento o uso propio",
+        "Habitaciones con fotos: subida firmada directo a Cloudinary, con vista previa de cómo las verá el huésped",
+        "Nombre, WhatsApp, horarios y textos editables desde el panel, para reutilizarlo en otro hotel sin tocar código",
+        "Sesión en cookie HttpOnly, bloqueo temporal tras intentos fallidos y cierre de otras sesiones al cambiar la contraseña",
+      ],
+      tecnologias: ["Next.js 15", "React 19", "TypeScript", "MongoDB", "Mongoose", "Zod", "JWT", "Cloudinary", "Tailwind CSS", "Vercel"],
+      // Cuando guardes la captura en public/proyectos/hotel-reservas.png, quita las barras de la siguiente línea
+      // imagen: "/proyectos/hotel-reservas.png",
+      repo: "https://github.com/DanielDiaz2805/hotel-reservas",
+      demo: "https://hotel-reservas-dun.vercel.app",
+    },
+    {
       titulo: "PMIC: procesamiento masivo de imágenes",
       resumen: "Proyecto académico. Plataforma que descarga, redimensiona, convierte y marca con agua lotes de imágenes de forma concurrente.",
       problema:
@@ -222,6 +245,8 @@ export const seo = {
     "APIs RESTful",
     "Flutter",
     "Next.js",
+    "TypeScript",
+    "MongoDB",
     "Python",
   ],
 };
